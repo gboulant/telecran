@@ -395,11 +395,17 @@ class SvgSketcher:
     def vlineLong(self,dy):
         self.lineTo(self.x,self.y+dy)
 
+    def xy(self):
+        return self.x, self.y
+
     # -------------------------------------------------------------
     # Sketching primitive functions
-    def point(self, x, y, color=None, label=None):
+    def point(self, x=None, y=None, color=None, label=None):
         # Technically, we draw a filled circle with no border, with radius
         # proportional to the lineWidth with factor SvgSketcher.pointRadiusScale
+        if x is None: x = self.x
+        if y is None: y = self.y
+
         pcx, pcy = self._cnvCoordinates(x, y)
         pr = self.pencil.lineWidth * SvgSketcher.pointRadiusScale
 
@@ -417,7 +423,10 @@ class SvgSketcher:
         dx = dy = float(1.5*pr) / self.coordinatesSystem.xyunit
         self.text(x+dx, y+dy, value=label, color=color)
 
-    def text(self, x, y, value, size=None, color=None):
+    def text(self, x=None, y=None, value="Hello", size=None, color=None):
+        if x is None: x = self.x
+        if y is None: y = self.y
+
         pencil = self.pencil.clone()
         if color is not None: pencil.fontColor = color
         if size is not None: pencil.fontSize = size
@@ -425,7 +434,10 @@ class SvgSketcher:
         style = pencil.textStyle()
         self.body += textPattern % (px, py, style, value) + "\n"
 
-    def circle(self, cx, cy, radius, fill=False, border=True):
+    def circle(self, cx=None, cy=None, radius=1, fill=False, border=True):
+        if cx is None: cx = self.x
+        if cy is None: cy = self.y
+
         pcx, pcy = self._cnvCoordinates(cx, cy)
         pr = self._cnvScaling(radius)
         pencil = self.pencil.clone()

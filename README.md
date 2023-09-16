@@ -8,16 +8,19 @@ qui reproduisent les déplacements du télécran:
 from telecran import Telecran
 
 t = Telecran()
-t.MoveTo(0,0)
-t.LineTo(10,2)
-t.VLineTo(7)
+        
+t.moveTo(-80,-50)
+t.point()
+t.lineTo(0,-20)
+t.vlineTo(25)
 
-t.Pencil.lineColor = "green"
-t.Pencil.lineWidth = 4
+t.pencil.lineColor = "green"
+t.pencil.lineWidth = 4
 
-t.HLineLong(10)
+t.hlineLong(35)
+t.circle(radius=10)
 
-t.Display()
+t.display()
 ```
 
 La dernière instruction affiche le résultat:

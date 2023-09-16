@@ -1,5 +1,7 @@
 <svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'>
-<line x1='300.00' y1='200.00' x2='360.00' y2='188.00' style='stroke: black; stroke-width: 2; fill: black'/>
-<line x1='360.00' y1='188.00' x2='360.00' y2='158.00' style='stroke: black; stroke-width: 2; fill: black'/>
-<line x1='360.00' y1='158.00' x2='420.00' y2='158.00' style='stroke: green; stroke-width: 4; fill: black'/>
+<circle cx='60.00' cy='350.00' r='3.00' style='stroke: none; stroke-width: 2; fill: black'/>
+<line x1='60.00' y1='350.00' x2='300.00' y2='260.00' style='stroke: black; stroke-width: 2; fill: black'/>
+<line x1='300.00' y1='260.00' x2='300.00' y2='125.00' style='stroke: black; stroke-width: 2; fill: black'/>
+<line x1='300.00' y1='125.00' x2='405.00' y2='125.00' style='stroke: green; stroke-width: 4; fill: black'/>
+<circle cx='405.00' cy='125.00' r='30.00' style='stroke: green; stroke-width: 4; fill: none'/>
 </svg>
